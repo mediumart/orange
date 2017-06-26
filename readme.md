@@ -1,5 +1,9 @@
 # mediumart orange
 
+[![Build Status](https://travis-ci.org/mediumart/orange.svg?branch=master)](https://travis-ci.org/mediumart/orange)
+[![Latest Stable Version](https://poser.pugx.org/mediumart/orange/v/stable)](https://packagist.org/packages/mediumart/orange)
+[![License](https://poser.pugx.org/mediumart/orange/license)](https://packagist.org/packages/mediumart/orange)
+
 ## Description
 A laravel adapter for orange api services.
 
