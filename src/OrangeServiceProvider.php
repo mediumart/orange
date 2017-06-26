@@ -19,6 +19,13 @@ class OrangeServiceProvider extends ServiceProvider
     protected $defer = true;
 
     /**
+     * 90 days.
+     * 
+     * @var integer
+     */
+    protected $api_token_default_expires_time_in_seconds = 7776000;
+
+    /**
      * Register Services boundaries
      *
      * @return void
@@ -60,22 +67,23 @@ class OrangeServiceProvider extends ServiceProvider
      */
     public function getClientToken()
     {
-        // 90 days.
-        $api_token_default_expires_time_in_seconds = 7776000;
-
-        // cache duration: 89 days.
-        $minutes = Carbon::now()->addMinutes(
-            ($api_token_default_expires_time_in_seconds/60) - (24*60)
-        )->diffInMinutes();
-
-        // cache the token and return it.
-        return Cache::remember('orange.sms.token', $minutes, function () {
+        return Cache::remember('orange.sms.token', $this->getCacheDuration(), function () {
             $response = $this->authorize();
-
-            return isset($response['access_token'])
-                ? $response['access_token']
-                : $this->throwsException($response);
+            return isset($response['access_token']) ? $response['access_token'] : $this->throwsException($response);
         });
+    }
+
+    /**
+     * Get the token cache duration in minutes.
+     * // cache duration: 80 days.
+     * 
+     * @return integer
+     */
+    public function getCacheDuration()
+    {
+        return Carbon::now()->addMinutes(
+            ($this->api_token_default_expires_time_in_seconds/60) - (240*60)
+        )->diffInMinutes();
     }
 
     /**
