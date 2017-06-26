@@ -83,4 +83,4 @@ public function toOrange($notifiable)
 
 ## License
 
-Mediumart orange-sms-laravel is an open-sourced software licensed under the [MIT license](https://github.com/mediumart/orange/blob/master/LICENSE.txt).
+Mediumart orange is an open-sourced software licensed under the [MIT license](https://github.com/mediumart/orange/blob/master/LICENSE.txt).
