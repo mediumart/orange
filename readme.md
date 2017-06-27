@@ -19,6 +19,10 @@ If you are using laravel 5 prior to version 5.5, add this to your `config/app.ph
 ```php
 Mediumart\Orange\Laravel\OrangeServiceProvider::class
 ```
+and for the `notifier` (if used, see **How to use** section below)
+```php
+Mediumart\Notifier\NotifierServiceProvider::class
+```
 
 ## Configuration
 
@@ -64,7 +68,18 @@ public function via($notifiable)
 }
 ```
 
-The second method consist on making use of the [mediumart/notifier](https://github.com/mediumart/notifier) library, that ships with this package, and will allow you to return the string `'orange'` as the driver hook, instead of the channel class name from the `via` method like above.
+The second method consist on making use of the [mediumart/notifier](https://github.com/mediumart/notifier) library, that ships with this package, and will allow you to return the string `'orange'` as the driver hook, instead of the channel class name from the `via` method like above. Then you will need to declare a **public** property(array) named `notificationsChannels` inside your `App\Providers\AppServiceProvider.php` in order to register the channel factory like this:
+
+```php
+/**
+ * $notificationsChannels.
+ * 
+ * @var array
+ */
+public $notificationsChannels = [
+    \Mediumart\Orange\Laravel\Notifications\OrangeSMSChannelFactory::class,
+];
+```
 
 Next, you need a `toOrange` method to return an instance of `\Mediumart\Orange\Laravel\Notifications\OrangeMessage::class`, in any notification that will use the `OrangeSMSChannel` channel.
 
