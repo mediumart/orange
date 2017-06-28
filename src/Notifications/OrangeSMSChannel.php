@@ -4,9 +4,8 @@ namespace Mediumart\Orange\Laravel\Notifications;
 
 use Mediumart\Orange\SMS\SMS;
 use Illuminate\Notifications\Notification;
-use Mediumart\Notifier\Contracts\Channels\Dispatcher;
 
-class OrangeSMSChannel implements Dispatcher
+class OrangeSMSChannel
 {
     /**
      * @var \Mediumart\Orange\SMS\SMS
