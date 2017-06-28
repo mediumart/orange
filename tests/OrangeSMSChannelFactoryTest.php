@@ -4,7 +4,6 @@ namespace Orange\Laravel\Tests;
 
 use Mockery;
 use Mediumart\Orange\SMS\Http\SMSClient;
-use Mediumart\Notifier\Contracts\Channels\Dispatcher;
 use Mediumart\Orange\Laravel\Notifications\OrangeSMSChannelFactory;
 
 class OrangeSMSChannelFactoryTest extends TestCase
@@ -24,6 +23,6 @@ class OrangeSMSChannelFactoryTest extends TestCase
     {
         $this->app->instance('orange-sms-client', Mockery::mock(SMSClient::getInstance()));
 
-        $this->assertInstanceOf(Dispatcher::class, OrangeSMSChannelFactory::createDriver('orange'));
+        $this->assertTrue(method_exists(OrangeSMSChannelFactory::createDriver('orange'), 'send'));
     }
 }
