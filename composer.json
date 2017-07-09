@@ -12,8 +12,7 @@
     ],
      "require": {
         "php": ">= 5.6",
-        "mediumart/orange-sms": "~1.1",
-        "mediumart/notifier": "~0.0"
+        "mediumart/orange-sms": "~1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.7",
@@ -29,6 +28,9 @@
         "psr-4": {
             "Orange\\Laravel\\Tests\\": "tests/"
         }
+    },
+    "suggest": {
+        "mediumart/notifier": "Allows you to use custom Aliases/hooks names for custom notifications channels"
     },
     "extra": {
         "laravel": {
