@@ -3,9 +3,8 @@
 namespace Mediumart\Orange\Laravel\Notifications;
 
 use Illuminate\Support\Facades\App;
-use Mediumart\Notifier\Contracts\Channels\Factory; 
 
-class OrangeSMSChannelFactory implements Factory
+class OrangeSMSChannelFactory
 {
     /**
      * Check for the driver capacity.
@@ -22,7 +21,7 @@ class OrangeSMSChannelFactory implements Factory
      * Create a new driver instance.
      *
      * @param  $driver
-     * @return \Mediumart\Notifier\Contracts\Channels\Dispatcher
+     * @return mixed
      */
     public static function createDriver($driver)
     {
