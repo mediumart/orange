@@ -30,7 +30,7 @@
         }
     },
     "suggest": {
-        "mediumart/notifier": "Allows you to use custom Aliases/hooks names for custom notifications channels"
+        "mediumart/notifier": "Allows you to use custom Aliases/hooks names for custom laravel 5.3+ notifications channels"
     },
     "extra": {
         "laravel": {
