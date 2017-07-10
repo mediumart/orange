@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediumart\Orange\Laravel;
+namespace Mediumart\Orange;
 
 use Carbon\Carbon;
 use Mediumart\Orange\SMS\SMS;

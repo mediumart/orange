@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediumart\Orange\Laravel\Notifications;
+namespace Mediumart\Orange\Notifications;
 
 /**
  * Class OrangeMessage

@@ -1,6 +1,6 @@
 <?php
 
-namespace Orange\Laravel\Tests;
+namespace Mediumart\Orange\Tests;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -19,7 +19,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Mediumart\Orange\Laravel\OrangeServiceProvider::class,
+            \Mediumart\Orange\OrangeServiceProvider::class,
         ];
     }
 }

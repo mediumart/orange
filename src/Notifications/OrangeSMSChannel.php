@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediumart\Orange\Laravel\Notifications;
+namespace Mediumart\Orange\Notifications;
 
 use Mediumart\Orange\SMS\SMS;
 use Illuminate\Support\Facades\App;

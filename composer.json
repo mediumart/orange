@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mediumart\\Orange\\Laravel\\" : "src/"
+            "Mediumart\\Orange\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Orange\\Laravel\\Tests\\": "tests/"
+            "Mediumart\\Orange\\Tests\\": "tests/"
         }
     },
     "suggest": {
