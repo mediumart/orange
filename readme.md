@@ -5,6 +5,7 @@
 [![License](https://poser.pugx.org/mediumart/orange/license)](https://packagist.org/packages/mediumart/orange)
 
 ## Description
+
 A laravel wrapper/adapter for orange api services.
 
 ## Installation
@@ -42,6 +43,17 @@ You can resolve an `SMS` client instance from the `Container` like this:
 
 ```php
 $sms = app('orange-sms');
+```
+
+Or using type hinting
+
+```php
+use Mediumart\Orange\SMS\SMS;
+
+public function index(SMS $sms) 
+{
+    /.../
+}
 ```
 
 The documentation on how to use the `$sms` client instance can be found [here](https://github.com/mediumart/orange-sms)
