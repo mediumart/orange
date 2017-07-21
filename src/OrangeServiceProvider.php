@@ -52,12 +52,7 @@ class OrangeServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [
-            'orange-sms',
-            'orange-sms-client',
-            SMSClient::class,
-            SMS::Class,
-        ];
+        return ['orange-sms', 'orange-sms-client', SMSClient::class, SMS::Class];
     }
 
     /**

@@ -54,6 +54,6 @@ class OrangeServiceProviderTest extends TestCase
     public function provided_services()
     {
         $provider = $this->app->getProvider(OrangeServiceProvider::class);
-        $this->assertEquals(['orange-sms', 'orange-sms-client', SMSClient::class, SMS::Class,], $provider->provides());
+        $this->assertEquals(['orange-sms', 'orange-sms-client', SMSClient::class, SMS::Class], $provider->provides());
     }
 }
