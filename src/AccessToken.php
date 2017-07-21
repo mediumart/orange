@@ -27,7 +27,7 @@ class AccessToken
     {
         return Cache::remember('orange.sms.token', $this->cacheTime(),
             function () {
-                if (isset(($response = $this->authorize())['access_token'])) {
+                if (isset((($response = $this->authorize())['access_token']))) {
                     return $response['access_token'];
                 }
 
