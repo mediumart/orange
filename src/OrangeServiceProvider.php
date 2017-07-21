@@ -27,9 +27,9 @@ class OrangeServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('orange-sms-client', function ($app) {
-            return SMSClient::getInstance(
-                $app->make('orange-sms-access-token')()
-            );
+            $token = $app->make('orange-sms-access-token');
+
+            return SMSClient::getInstance($token());
         });
 
         $this->app->bind('orange-sms', function ($app) {
