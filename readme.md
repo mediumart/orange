@@ -1,6 +1,7 @@
 # mediumart orange
 
 [![Build Status](https://travis-ci.org/mediumart/orange.svg?branch=master)](https://travis-ci.org/mediumart/orange)
+[![Coverage Status](https://coveralls.io/repos/github/mediumart/orange/badge.svg?branch=master)](https://coveralls.io/github/mediumart/orange?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/mediumart/orange/v/stable)](https://packagist.org/packages/mediumart/orange)
 [![License](https://poser.pugx.org/mediumart/orange/license)](https://packagist.org/packages/mediumart/orange)
 
