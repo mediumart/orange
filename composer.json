@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mediumart\\Orange\\Laravel\\OrangeServiceProvider"
+                "Mediumart\\Orange\\OrangeServiceProvider"
             ]
         }
     }
