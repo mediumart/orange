@@ -24,13 +24,13 @@ class AccessTokenTest extends TestCase
 
     /**
      * @test
+     * @expectedException  \Mediumart\Orange\SMS\Exceptions\InvalidCredentialsException
      */
     public function get_client_token_invalid_credentials_exception()
     {
         $accessToken = m::mock(AccessToken::class.'[authorize]');
         $accessToken->shouldReceive('authorize')->andReturn(['error' => 'error']);
 
-        $this->expectException('\Mediumart\Orange\SMS\Exceptions\InvalidCredentialsException');
         $accessToken();
     }
 }
