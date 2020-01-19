@@ -9,7 +9,7 @@ sudo: false
 
 install: 
   - travis_retry composer install --no-interaction --prefer-dist
-  - travis_retry composer require satooshi/php-coveralls --dev --no-interaction
+  - travis_retry composer require php-coveralls/php-coveralls --dev --no-interaction
 
 script: vendor/bin/phpunit --coverage-clover clover.xml --verbose
 
