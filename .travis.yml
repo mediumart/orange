@@ -7,6 +7,8 @@ php:
 
 sudo: false
 
+before_script: echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
 install: 
   - travis_retry composer install --no-interaction --prefer-dist
   - travis_retry composer require php-coveralls/php-coveralls --dev --no-interaction
