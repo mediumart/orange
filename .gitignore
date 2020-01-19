@@ -4,3 +4,4 @@ phpunit.xml
 clover.xml
 coveralls-upload.json
 .phpunit.result.cache
+composer.lock
