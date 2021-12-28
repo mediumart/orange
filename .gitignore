@@ -5,3 +5,4 @@ clover.xml
 coveralls-upload.json
 .phpunit.result.cache
 composer.lock
+.DS_Store

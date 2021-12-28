@@ -14,7 +14,7 @@ class AccessToken
      * 
      * @var integer
      */
-    protected $defaultExpiresIn = 7776000;
+    protected $defaultCacheSeconds = 3000;
 
     /**
      * invoke class as a method.
@@ -25,7 +25,7 @@ class AccessToken
      */
     public function __invoke()
     {
-        return Cache::remember('orange.sms.token', $this->cacheTime(),
+        return Cache::remember('orange.sms.token', $this->defaultCacheSeconds,
             function () {
                 $response = $this->authorize();
 
@@ -46,18 +46,5 @@ class AccessToken
     public function authorize()
     {
         return SMSClient::authorize(config('services.orange.sms.client_id'), config('services.orange.sms.client_secret'));
-    }
-
-    /**
-     * Get the token cache time in minutes.
-     * // cache duration: 80 days.
-     * 
-     * @return integer
-     */
-    protected function cacheTime()
-    {
-        return Carbon::now()
-            ->addMinutes(($this->defaultExpiresIn/60) - (240*60))
-                ->diffInMinutes();
     }
 }
